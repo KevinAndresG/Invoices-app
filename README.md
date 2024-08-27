@@ -22,3 +22,7 @@
 
 - Code structure✅
 - Unit tests
+
+### Description of what I did
+
+- Implement the Firebase database to save the data and retrieve it dynamically, a header in which an authentication system could be created and save the invoices for each user separately and that each one has their data, a routing with the views to create, edit, see the list of invoices with actions such as edit, delete, view details and a detailed view with all the invoice data.
