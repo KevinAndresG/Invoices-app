@@ -1,0 +1,72 @@
+@import "../../../styles.scss";
+
+.invoice-form {
+  width: 100%;
+  min-height: 790px;
+  background-color: $primary-white;
+  box-shadow: -8px 8px 10px -5px $primary-gray;
+  border-radius: 8px;
+  margin: 0 auto;
+  padding: 20px;
+
+  .form-group {
+    margin-bottom: 10px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 2px;
+    font-weight: bold;
+    color: $primary-gray;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid $pastel-gray-blue;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    color: $deep-blue;
+  }
+
+  .form-group textarea {
+    height: 80px;
+    resize: vertical;
+  }
+
+  .form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: $cyan-blue;
+    color: $primary-white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.1s ease;
+  }
+
+  .form-group button:hover {
+    cursor: pointer;
+    background-color: $bright-blue;
+  }
+
+  .payment-method {
+    display: flex;
+    align-items: center;
+  }
+
+  .payment-method img {
+    width: 30px;
+    margin-right: 10px;
+  }
+
+  app-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

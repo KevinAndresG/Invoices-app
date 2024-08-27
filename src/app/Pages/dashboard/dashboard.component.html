@@ -1,0 +1,11 @@
+<app-header />
+<main id="dashboard-container">
+  <aside>
+    @if (viewportWidth > 768) {
+    <app-side-bar />
+    }
+  </aside>
+  <aside id="dashboard">
+    <router-outlet />
+  </aside>
+</main>

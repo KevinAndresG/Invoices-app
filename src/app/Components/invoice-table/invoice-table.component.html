@@ -1,0 +1,52 @@
+<section id="invoice-table">
+  <div class="invoice-table-header">
+    <div class="items-fields">
+      <p class="table-item">ID</p>
+    </div>
+    <div class="items-fields">
+      <p class="table-item">Client</p>
+    </div>
+    <div class="items-fields">
+      <p class="table-item">Email</p>
+    </div>
+    <div class="items-fields">
+      <p class="table-item">Status</p>
+    </div>
+    <div class="items-fields actions">
+      <p class="table-item">Actions</p>
+    </div>
+  </div>
+  @if (invoices() && invoices()!.length > 0) { @for (invoice of invoices();
+  track invoice; let i = $index) {
+  <div class="invoice-table-body">
+    <div class="items-fields">
+      <p class="table-item">{{ invoice.invoiceNumber }}</p>
+    </div>
+    <div class="items-fields">
+      <p class="table-item">{{ invoice.clientName }}</p>
+    </div>
+    <div class="items-fields">
+      <p class="table-item">{{ invoice.clientEmail }}</p>
+    </div>
+    <div [class]="'items-fields status ' + invoice.paymentStatus">
+      <p class="table-item">{{ invoice.paymentStatus }}</p>
+    </div>
+    <div class="items-fields actions">
+      <button
+        class="action-btn"
+        [routerLink]="['/dashboard/edit-invoice', invoice.id]"
+      >
+        <img width="20" src="edit.png" alt="" />
+      </button>
+      <button class="action-btn" (click)="delete(invoice)">
+        <img width="20" src="delete.png" alt="" />
+      </button>
+      <a class="action-btn" [routerLink]="['/dashboard/invoice', invoice.id]"
+        >></a
+      >
+    </div>
+  </div>
+  } } @else {
+  <app-loader />
+  }
+</section>

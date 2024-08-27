@@ -1,0 +1,9 @@
+<section id="create-invoice">
+  <header id="create-invoice-header">
+    <h1 class="title">{{ id ? "Edit Invoice" : "Create Invoice" }}</h1>
+    <a routerLink="/dashboard/invoices-list" class="invoices-list"
+      >Invoices List</a
+    >
+  </header>
+  <app-invoice-form />
+</section>

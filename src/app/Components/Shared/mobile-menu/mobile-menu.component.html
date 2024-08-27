@@ -1,0 +1,21 @@
+<div id="mobile-menu">
+  <div class="hamburguer-button" (click)="openMenu()">
+    <span [class]="{ open: isOpen, 'menu-line': true }"></span>
+    <span [class]="{ open: isOpen, 'menu-line': true }"></span>
+    <span [class]="{ open: isOpen, 'menu-line': true }"></span>
+  </div>
+  <ul [class]="{ open: isOpen, 'items-panel': true }">
+    <div id="Header-mobile">
+      @for (item of items; track item; let i = $index) {
+      <a
+        (click)="openMenu()"
+        [routerLinkActive]="['active']"
+        class="side-bar-link"
+        [routerLink]="item.path"
+      >
+        <li class="side-bar-item">{{ item.title }}</li>
+      </a>
+      }
+    </div>
+  </ul>
+</div>

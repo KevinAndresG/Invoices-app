@@ -1,0 +1,104 @@
+<form
+  class="invoice-form"
+  [formGroup]="invoiceForm"
+  (ngSubmit)="id() ? updateInvoice() : createInvoice()"
+>
+  @if(!loading()) {
+  <div class="form-group">
+    <label for="invoiceNumber">Invoice ID</label>
+    <input
+      formControlName="invoiceNumber"
+      type="text"
+      id="invoiceNumber"
+      placeholder="Enter invoice ID"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="clientName">Client Name</label>
+    <input
+      formControlName="clientName"
+      type="text"
+      id="clientName"
+      placeholder="Enter client name"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="clientEmail">Client Email</label>
+    <input
+      formControlName="clientEmail"
+      type="email"
+      id="clientEmail"
+      placeholder="Enter client email"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="invoiceDate">Invoice Date</label>
+    <input formControlName="invoiceDate" type="date" id="invoiceDate" />
+  </div>
+
+  <div class="form-group">
+    <label for="dueDate">Due Date</label>
+    <input formControlName="dueDate" type="date" id="dueDate" />
+  </div>
+
+  <div class="form-group">
+    <label for="itemDescription">Item/Service Description</label>
+    <textarea
+      formControlName="itemDescription"
+      id="itemDescription"
+      placeholder="Enter the item or service description"
+    ></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="labor">Labor Costs</label>
+    <input
+      formControlName="labor"
+      type="number"
+      id="labor"
+      placeholder="Enter total labor"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="materials">Materials Costs</label>
+    <input
+      formControlName="materials"
+      type="number"
+      id="materials"
+      placeholder="Enter Material Costs"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="paymentStatus">Payment Status</label>
+    <select formControlName="paymentStatus" id="paymentStatus">
+      <option value="pending">Pending</option>
+      <option value="paid">Paid</option>
+      <option value="overdue">Overdue</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="paymentMethod">Payment Method</label>
+    <select formControlName="paymentMethod" id="paymentMethod">
+      <option value="credit-card">Credit Card</option>
+      <option value="debit-card">Debit Card</option>
+      <option value="paypal">PayPal</option>
+      <option value="bank-transfer">Bank Transfer</option>
+      <option value="cash">Cash</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <button type="submit">
+      {{ id() ? "Update Invoice" : "Create Invoice" }}
+    </button>
+  </div>
+  } @else {
+  <app-loader />
+  }
+</form>

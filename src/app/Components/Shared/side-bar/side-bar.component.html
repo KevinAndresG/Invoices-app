@@ -1,0 +1,14 @@
+<nav id="side-bar">
+  <img class="logo" src="invoice-logo.png" width="100" alt="" />
+  <ul class="side-bar-items">
+    @for (item of items; track item; let i = $index) {
+    <a
+      [routerLinkActive]="['active']"
+      class="side-bar-link"
+      [routerLink]="item.path"
+    >
+      <li class="side-bar-item">{{ item.title }}</li>
+    </a>
+    }
+  </ul>
+</nav>

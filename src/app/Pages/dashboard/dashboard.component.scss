@@ -1,0 +1,21 @@
+#dashboard-container {
+  display: flex;
+  overflow: hidden;
+
+  :nth-child(1) {
+    width: 20%;
+  }
+}
+
+#dashboard {
+  width: 80%;
+}
+
+@media screen and (width < 768px) {
+  #dashboard-container {
+    display: block;
+  }
+  #dashboard {
+    width: 100%;
+  }
+}

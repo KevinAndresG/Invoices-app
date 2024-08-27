@@ -1,0 +1,9 @@
+<section id="invoices-list">
+  <header id="invoices-list-header">
+    <h1 class="title">Invoices</h1>
+    <a routerLink="/dashboard/create-invoice" class="create-invoice"
+      >Create Invoice</a
+    >
+  </header>
+  <app-invoice-table [invoices]="invoices()" />
+</section>

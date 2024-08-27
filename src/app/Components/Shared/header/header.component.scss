@@ -1,0 +1,31 @@
+@import "../../../../styles.scss";
+
+#header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  background-color: $primary-white;
+  box-shadow: 0 0 10px $primary-gray;
+  z-index: 100;
+
+  app-mobile-menu {
+    width: 70%;
+  }
+
+  .profile-info {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    margin-left: 20px;
+
+    .profile-image {
+      border-radius: 50%;
+    }
+  }
+}

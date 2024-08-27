@@ -1,0 +1,107 @@
+@import "../../../styles.scss";
+
+#invoice-table {
+  width: 100%;
+  background-color: $primary-white;
+  box-shadow: -8px 8px 10px -5px $primary-gray;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .invoice-table-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    column-gap: 2%;
+    border-bottom: 1px solid $primary-black;
+
+    .items-fields {
+      width: 18%;
+      font-weight: bold;
+      color: $deep-blue;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .invoice-table-body {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    column-gap: 2%;
+
+    .items-fields {
+      width: 18%;
+      font-weight: normal;
+      color: $primary-gray;
+      display: flex;
+      align-items: start;
+      justify-content: center;
+
+      .table-item {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      &.status {
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        font-size: clamp(0.5rem, 2vw, 1rem);
+        color: $primary-white;
+      }
+      &.paid {
+        background-color: $paid-color;
+      }
+
+      &.pending {
+        background-color: $pending-color;
+      }
+
+      &.overdue {
+        background-color: $expired-color;
+      }
+
+      &.actions {
+        height: 20px;
+        display: flex;
+        column-gap: 5px;
+        align-items: center;
+        margin-left: 5px;
+
+        .action-btn {
+          text-decoration: none;
+          color: $primary-black;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: none;
+          background-color: transparent;
+
+          &:hover {
+            cursor: pointer;
+            filter: contrast(0);
+          }
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $pastel-gray-blue;
+    }
+  }
+}
+
+@media screen and (width < 768px) {
+  .action-btn {
+    img {
+      width: 15px;
+    }
+  }
+}
