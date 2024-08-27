@@ -1,27 +1,24 @@
-# InvoiceGenerator
+# Versions
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.2.
+- Angular Version 18.
+- Node Version 18.
 
-## Development server
+## Frontend Homework
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- As part of our application process, we'd like to see what you can produce by giving you a small assignment. It should take you no more than a few hours to complete the assignment, but any extra polish or features you might want to put in will not go unnoticed.
 
-## Code scaffolding
+### The assignment
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- We would like you to create an invoicing app. The features it should include:
 
-## Build
+- Create a new invoice, it could be any component that you think would be a good fit.✅
+- Add line items to the invoice. Line items may include hours of work at a certain rate, work-related expenses, materials, labor, etc.✅
+- Include a dropdown list on how to pay it, Visa or Debit, etc.✅
+- Include Send button which could send the invoice via email (does not have to actually send emails, but if it does, great!) (las facturas están siendo grabadas en una base de datos de firebase) ✅
+- View invoices including status (paid, outstanding, late, etc.)✅
+- Your backend can be anything, and does not have to work. If you would like to use a mocked-out interface, that is fine (even static data in code is ok).✅
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Extra credit features
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Code structure✅
+- Unit tests
