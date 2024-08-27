@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Averia Serif Libre", serif;
+  font-weight: bold;
+}
+
+$page-bg: rgb(255, 255, 255);
+$loader-bar-bg: #019bc2;
+$loader-bar-width: 10px;
+
+$primary-white: #fff;
+$primary-black: #000;
+$primary-gray: #333;
+$paid-color: #008000bb;
+$pending-color: #d67600bb;
+$expired-color: #bb0000be;
+$light-blue: #b3cde0;
+$medium-blue: #6497b1;
+$deep-blue: #005b96;
+$navy-blue: #03396c;
+$cyan-blue: #0077b6;
+$bright-blue: #0096c7;
+$brightness-blue: #00b5ec;
+$pastel-gray-blue: #a3a9ac;
+$very-light-blue: #d0e1f9;
+$pastel-blue-gray: #bcccdc;
+$soft-pastel-blue: #a8d0e6;
+$almost-white-pastel-blue: #f0f4f8;
+$muted-pastel-blue: #bbd1ea;
+
+:root {
+  background-color: $light-blue;
+}
