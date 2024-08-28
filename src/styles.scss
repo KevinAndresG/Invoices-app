@@ -14,9 +14,17 @@ $loader-bar-width: 10px;
 $primary-white: #fff;
 $primary-black: #000;
 $primary-gray: #333;
+
 $paid-color: #008000bb;
 $pending-color: #d67600bb;
-$expired-color: #bb0000be;
+$overdue-color: #bb0000be;
+$cancelled-color: #6c757d;
+$partially-paid-color: #ffc107;
+$refunded-color: #17a2b8;
+$sent-color: #007bff;
+$approved-color: #28a745;
+$rejected-color: #dc3545;
+
 $light-blue: #b3cde0;
 $medium-blue: #6497b1;
 $deep-blue: #005b96;

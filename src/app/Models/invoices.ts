@@ -1,3 +1,5 @@
+import { PaymentStatus } from './status';
+
 export interface Invoices {
   id?: string;
   invoiceDate: any;
@@ -7,7 +9,7 @@ export interface Invoices {
   materials: number;
   paymentMethod: string;
   itemDescription: string;
-  paymentStatus: string;
+  paymentStatus: PaymentStatus;
   invoiceNumber: string;
   dueDate: any;
 }
