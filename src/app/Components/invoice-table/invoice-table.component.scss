@@ -53,7 +53,7 @@
         align-items: center;
         justify-content: center;
         border-radius: 5px;
-        font-size: clamp(0.5rem, 2vw, 1rem);
+        font-size: clamp(0.8rem, 2vw, 1rem);
         color: $primary-white;
       }
       &.paid {
@@ -65,7 +65,31 @@
       }
 
       &.overdue {
-        background-color: $expired-color;
+        background-color: $overdue-color;
+      }
+
+      &.cancelled {
+        background-color: $cancelled-color;
+      }
+
+      &.partially-paid {
+        background-color: $partially-paid-color;
+      }
+
+      &.refunded {
+        background-color: $refunded-color;
+      }
+
+      &.sent {
+        background-color: $sent-color;
+      }
+
+      &.approved {
+        background-color: $approved-color;
+      }
+
+      &.rejected {
+        background-color: $rejected-color;
       }
 
       &.actions {
@@ -101,7 +125,7 @@
 @media screen and (width < 768px) {
   .action-btn {
     img {
-      width: 15px;
+      width: 20px;
     }
   }
 }

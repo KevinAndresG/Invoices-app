@@ -9,69 +9,58 @@
     <h2 class="invoice-title">Invoice Details</h2>
 
     @if (invoice().invoiceNumber) {
-    <div class="invoice-details-group">
-      <label for="invoiceNumber" class="invoice-label">Invoice Number:</label>
-      <p class="invoice-value">{{ invoice().invoiceNumber }}</p>
-    </div>
-
-    <div class="invoice-details-group">
-      <label for="clientName" class="invoice-label">Client Name:</label>
-      <p class="invoice-value">{{ invoice().clientName }}</p>
-    </div>
-
-    <div class="invoice-details-group">
-      <label for="clientEmail" class="invoice-label">Client Email:</label>
-      <p class="invoice-value">{{ invoice().clientEmail }}</p>
-    </div>
-
-    <div class="invoice-details-group">
-      <label for="invoiceDate" class="invoice-label">Invoice Date:</label>
-      <p class="invoice-value">
-        {{ invoice().invoiceDate | date : "dd/MM/yyyy" }}
-      </p>
-    </div>
-
-    <div class="invoice-details-group">
-      <label for="dueDate" class="invoice-label">Due Date:</label>
-      <p class="invoice-value">
-        {{ invoice().dueDate | date : "dd/MM/yyyy" }}
-      </p>
-    </div>
-
-    <div class="invoice-details-group">
-      <label for="itemDescription" class="invoice-label"
-        >Inv Description:</label
+    <div class="invoice-header">
+      <h1 class="invoice-number">Invoice ID: {{ invoice().invoiceNumber }}</h1>
+      <span
+        class="payment-status"
+        [class]="statusClasses[invoice().paymentStatus]"
+        >{{ invoice().paymentStatus }}</span
       >
-      <p class="invoice-value">{{ invoice().itemDescription }}</p>
     </div>
 
-    <div class="invoice-details-group">
-      <label for="amount" class="invoice-label">Labor:</label>
-      <p class="invoice-value">{{ invoice().labor | currency : "USD" }}</p>
-    </div>
-
-    <div class="invoice-details-group">
-      <label for="amount" class="invoice-label">Materials:</label>
-      <p class="invoice-value">
-        {{ invoice().materials | currency : "USD" }}
-      </p>
-    </div>
-
-    <div class="invoice-details-group">
-      <label for="paymentStatus" class="invoice-label">Payment Status:</label>
-      <p class="invoice-value">{{ invoice().paymentStatus }}</p>
-    </div>
-
-    <div class="invoice-details-group">
-      <label for="paymentMethod" class="invoice-label">Payment Method:</label>
-      <p class="invoice-value">{{ invoice().paymentMethod }}</p>
-    </div>
-
-    <div class="invoice-details-group">
-      <label for="paymentMethod" class="invoice-label">Total Costs:</label>
-      <p class="invoice-value total">
-        {{ invoice().labor + invoice().materials | currency : "USD" }}
-      </p>
+    <div class="invoice-details">
+      <div class="invoice-row">
+        <label class="invoice-label">Invoice Date:</label>
+        <p class="invoice-value">
+          {{ invoice().invoiceDate | date : "dd/MM/yyyy" }}
+        </p>
+      </div>
+      <div class="invoice-row">
+        <label class="invoice-label">Client Name:</label>
+        <p class="invoice-value">{{ invoice().clientName }}</p>
+      </div>
+      <div class="invoice-row">
+        <label class="invoice-label">Client Email:</label>
+        <p class="invoice-value">{{ invoice().clientEmail }}</p>
+      </div>
+      <div class="invoice-row">
+        <label class="invoice-label">Due Date:</label>
+        <p class="invoice-value">
+          {{ invoice().dueDate | date : "dd/MM/yyyy" }}
+        </p>
+      </div>
+      <div class="invoice-row">
+        <label class="invoice-label">Labor:</label>
+        <p class="invoice-value">{{ invoice().labor | currency }}</p>
+      </div>
+      <div class="invoice-row">
+        <label class="invoice-label">Materials:</label>
+        <p class="invoice-value">{{ invoice().materials | currency }}</p>
+      </div>
+      <div class="invoice-row">
+        <label class="invoice-label">Payment Method:</label>
+        <p class="invoice-value">{{ invoice().paymentMethod }}</p>
+      </div>
+      <div class="invoice-row">
+        <label class="invoice-label">Item Description:</label>
+        <p class="invoice-value">{{ invoice().itemDescription }}</p>
+      </div>
+      <div class="invoice-row total">
+        <label class="invoice-label">Total Costs:</label>
+        <p class="invoice-value total-value">
+          {{ invoice().labor + invoice().materials | currency : "USD" }}
+        </p>
+      </div>
     </div>
     } @else {
     <app-loader />

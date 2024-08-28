@@ -34,12 +34,12 @@
 
   .invoice-details-card {
     background-color: $primary-white;
-    border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 50%;
-    min-height: 600px;
+    min-height: 500px;
     margin: 20px auto;
+    border-radius: 10px;
   }
 
   .invoice-title {
@@ -48,36 +48,102 @@
     text-align: center;
     color: $primary-gray;
   }
-
-  .invoice-details-group {
+  .invoice-header {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid $very-light-blue;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 2px solid $medium-blue;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 
-    &:last-of-type {
-      border-bottom: none;
+    .invoice-number {
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 5px;
+      color: $navy-blue;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .payment-status {
+      font-size: 18px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      color: $primary-white;
+
+      &.paid {
+        background-color: $paid-color;
+      }
+
+      &.pending {
+        background-color: $pending-color;
+      }
+
+      &.overdue {
+        background-color: $overdue-color;
+      }
+
+      &.cancelled {
+        background-color: $cancelled-color;
+      }
+
+      &.partially-paid {
+        background-color: $partially-paid-color;
+      }
+
+      &.refunded {
+        background-color: $refunded-color;
+      }
+
+      &.sent {
+        background-color: $sent-color;
+      }
+
+      &.approved {
+        background-color: $approved-color;
+      }
+
+      &.rejected {
+        background-color: $rejected-color;
+      }
     }
   }
 
-  .invoice-label {
-    font-weight: bold;
-    color: $navy-blue;
-  }
+  .invoice-details {
+    .invoice-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid $pastel-gray-blue;
 
-  .invoice-value {
-    color: $cyan-blue;
-    text-align: right;
-    flex: 1;
-    margin-left: 10px;
-    font-weight: bold;
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+      &.total {
+        margin-top: 20px;
+        .total-value {
+          color: $brightness-blue;
+        }
+      }
 
-    &.total {
-      color: $brightness-blue;
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .invoice-label {
+        width: 100%;
+        font-weight: bold;
+        color: $navy-blue;
+      }
+
+      .invoice-value {
+        width: 100%;
+        text-align: right;
+        color: $primary-gray;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
     }
   }
 }
@@ -87,16 +153,34 @@
     .invoice-details-card {
       width: 90%;
     }
-    .invoice-value {
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-  }
 
-  .invoice-details-group {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    .invoice-header {
+      flex-direction: column;
+
+      .invoice-number {
+        margin-bottom: 10px;
+      }
+
+      .payment-status {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    .invoice-details {
+      .invoice-row {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .invoice-label {
+          text-align: center;
+        }
+
+        .invoice-value {
+          text-align: center;
+        }
+      }
+    }
   }
 }

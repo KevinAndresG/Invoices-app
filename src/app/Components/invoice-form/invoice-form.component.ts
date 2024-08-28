@@ -42,8 +42,8 @@ export class InvoiceFormComponent implements OnInit {
       itemDescription: [''],
       labor: ['', Validators.required],
       materials: ['', Validators.required],
-      paymentStatus: ['pending'],
-      paymentMethod: ['credit-card'],
+      paymentStatus: ['Pending'],
+      paymentMethod: ['Credit Card'],
     });
     this.id.set(this.route.snapshot.paramMap.get('id')!);
     if (this.route.snapshot.paramMap.get('id')) {

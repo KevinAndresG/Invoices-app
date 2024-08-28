@@ -28,7 +28,10 @@
     <div class="items-fields">
       <p class="table-item">{{ invoice.clientEmail }}</p>
     </div>
-    <div [class]="'items-fields status ' + invoice.paymentStatus">
+    <div
+      class="items-fields status"
+      [class]="statusClasses[invoice.paymentStatus]"
+    >
       <p class="table-item">{{ invoice.paymentStatus }}</p>
     </div>
     <div class="items-fields actions">
@@ -42,7 +45,7 @@
         <img width="20" src="delete.png" alt="" />
       </button>
       <a class="action-btn" [routerLink]="['/dashboard/invoice', invoice.id]"
-        >></a
+        >>></a
       >
     </div>
   </div>

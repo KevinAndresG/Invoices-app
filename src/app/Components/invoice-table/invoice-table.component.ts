@@ -4,6 +4,7 @@ import { CurrencyPipe } from '@angular/common';
 import { InvoicesService } from '../../Services/invoices.service';
 import { LoaderComponent } from '../Shared/loader/loader.component';
 import { RouterLink } from '@angular/router';
+import { InvoiceStatus } from '../../Models/status';
 
 @Component({
   selector: 'app-invoice-table',
@@ -15,6 +16,17 @@ import { RouterLink } from '@angular/router';
 export class InvoiceTableComponent {
   constructor(private invoicesService: InvoicesService) {}
   invoices = input<Invoices[]>();
+  statusClasses: InvoiceStatus = {
+    Paid: 'paid',
+    Pending: 'pending',
+    Overdue: 'overdue',
+    Cancelled: 'cancelled',
+    PartiallyPaid: 'partially-paid',
+    Refunded: 'refunded',
+    Sent: 'sent',
+    Approved: 'approved',
+    Rejected: 'rejected',
+  };
 
   /**
    * Deletes an invoice from the database and refreshes the page.
