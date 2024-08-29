@@ -6,11 +6,9 @@
     </a>
   </header>
   <div class="invoice-details-card">
-    <h2 class="invoice-title">Invoice Details</h2>
-
     @if (invoice().invoiceNumber) {
     <div class="invoice-header">
-      <h1 class="invoice-number">Invoice ID: {{ invoice().invoiceNumber }}</h1>
+      <h1 class="invoice-number">ID - #{{ invoice().invoiceNumber }}</h1>
       <span
         class="payment-status"
         [class]="statusClasses[invoice().paymentStatus]"
@@ -62,7 +60,9 @@
         </p>
       </div>
     </div>
-    } @else {
+    @if(invoice().paymentStatus !== "Paid") {
+    <button class="send-button">Send</button>
+    } } @else {
     <app-loader />
     }
   </div>

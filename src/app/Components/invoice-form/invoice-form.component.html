@@ -15,36 +15,6 @@
   </div>
 
   <div class="form-group">
-    <label for="clientName">Client Name</label>
-    <input
-      formControlName="clientName"
-      type="text"
-      id="clientName"
-      placeholder="Enter client name"
-    />
-  </div>
-
-  <div class="form-group">
-    <label for="clientEmail">Client Email</label>
-    <input
-      formControlName="clientEmail"
-      type="email"
-      id="clientEmail"
-      placeholder="Enter client email"
-    />
-  </div>
-
-  <div class="form-group">
-    <label for="invoiceDate">Invoice Date</label>
-    <input formControlName="invoiceDate" type="date" id="invoiceDate" />
-  </div>
-
-  <div class="form-group">
-    <label for="dueDate">Due Date</label>
-    <input formControlName="dueDate" type="date" id="dueDate" />
-  </div>
-
-  <div class="form-group">
     <label for="itemDescription">Item/Service Description</label>
     <textarea
       formControlName="itemDescription"
@@ -53,53 +23,92 @@
     ></textarea>
   </div>
 
-  <div class="form-group">
-    <label for="labor">Labor Costs</label>
-    <input
-      formControlName="labor"
-      type="number"
-      id="labor"
-      placeholder="Enter total labor"
-    />
+  <div class="client-info block">
+    <div class="form-group">
+      <label for="clientName">Client Name</label>
+      <input
+        formControlName="clientName"
+        type="text"
+        id="clientName"
+        placeholder="Enter client name"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="clientEmail">Client Email</label>
+      <input
+        formControlName="clientEmail"
+        type="email"
+        id="clientEmail"
+        placeholder="Enter client email"
+      />
+    </div>
   </div>
 
-  <div class="form-group">
-    <label for="materials">Materials Costs</label>
-    <input
-      formControlName="materials"
-      type="number"
-      id="materials"
-      placeholder="Enter Material Costs"
-    />
+  <div class="invoice-info block">
+    <div class="form-group">
+      <label for="invoiceDate">Invoice Date</label>
+      <input formControlName="invoiceDate" type="date" id="invoiceDate" />
+    </div>
+
+    <div class="form-group">
+      <label for="dueDate">Due Date</label>
+      <input formControlName="dueDate" type="date" id="dueDate" />
+    </div>
   </div>
 
-  <div class="form-group">
-    <label for="paymentStatus">Payment Status</label>
-    <select formControlName="paymentStatus" id="paymentStatus">
-      <option value="Paid">Paid</option>
-      <option value="Pending">Pending</option>
-      <option value="Overdue">Overdue</option>
-      <option value="Cancelled">Cancelled</option>
-      <option value="PartiallyPaid">Partially Paid</option>
-      <option value="Refunded">Refunded</option>
-      <option value="Send">Send</option>
-      <option value="Approved">Approved</option>
-      <option value="Rejected">Rejected</option>
-    </select>
+  <div class="pricing-info block">
+    <div class="top-info">
+      <div class="form-group">
+        <label for="labor">Labor Costs</label>
+        <input
+          formControlName="labor"
+          type="number"
+          id="labor"
+          placeholder="Enter total labor"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="materials">Materials Costs</label>
+        <input
+          formControlName="materials"
+          type="number"
+          id="materials"
+          placeholder="Enter Material Costs"
+        />
+      </div>
+    </div>
+    <div class="bottom-info">
+      <div class="form-group">
+        <label for="paymentStatus">Payment Status</label>
+        <select formControlName="paymentStatus" id="paymentStatus">
+          <option value="Paid">Paid</option>
+          <option value="Pending">Pending</option>
+          <option value="Overdue">Overdue</option>
+          <option value="Cancelled">Cancelled</option>
+          <option value="PartiallyPaid">Partially Paid</option>
+          <option value="Refunded">Refunded</option>
+          <option value="Send">Send</option>
+          <option value="Approved">Approved</option>
+          <option value="Rejected">Rejected</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="paymentMethod">Payment Method</label>
+        <select formControlName="paymentMethod" id="paymentMethod">
+          <option value="Credit Card">Credit Card</option>
+          <option value="Debit Card">Debit Card</option>
+          <option value="PayPal">PayPal</option>
+          <option value="Bank Transfer">Bank Transfer</option>
+          <option value="Cash">Cash</option>
+        </select>
+      </div>
+    </div>
   </div>
 
-  <div class="form-group">
-    <label for="paymentMethod">Payment Method</label>
-    <select formControlName="paymentMethod" id="paymentMethod">
-      <option value="Credit Card">Credit Card</option>
-      <option value="Debit Card">Debit Card</option>
-      <option value="PayPal">PayPal</option>
-      <option value="Bank Transfer">Bank Transfer</option>
-      <option value="Cash">Cash</option>
-    </select>
-  </div>
-
-  <div class="form-group">
+  <div class="form-group-button">
     <button type="submit">
       {{ id() ? "Update Invoice" : "Create Invoice" }}
     </button>

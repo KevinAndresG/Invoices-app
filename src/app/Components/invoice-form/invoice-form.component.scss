@@ -1,22 +1,41 @@
 @import "../../../styles.scss";
 
 .invoice-form {
-  width: 100%;
-  min-height: 790px;
+  width: 60%;
+  min-height: 500px;
   background-color: $primary-white;
-  box-shadow: -8px 8px 10px -5px $primary-gray;
+  box-shadow: -2px 5px 10px -2px $primary-gray;
   border-radius: 8px;
   margin: 0 auto;
+  margin-top: 80px;
   padding: 20px;
 
   .form-group {
-    margin-bottom: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+
+    &-button {
+      margin-top: 30px;
+    }
+  }
+
+  .block {
+    width: 100%;
+    display: flex;
+    column-gap: 20px;
+    justify-content: space-between;
+  }
+
+  .top-info {
+    width: 50%;
+  }
+  .bottom-info {
+    width: 50%;
   }
 
   .form-group label {
     display: block;
-    margin-bottom: 2px;
-    font-weight: bold;
+    margin-bottom: 5px;
     color: $primary-gray;
   }
 
@@ -24,12 +43,18 @@
   .form-group select,
   .form-group textarea {
     width: 100%;
-    padding: 6px;
-    border: 1px solid $pastel-gray-blue;
+    padding: 10px;
+    border: 1px solid $very-light-gray;
     border-radius: 5px;
     font-size: 16px;
     outline: none;
     color: $deep-blue;
+    &:focus {
+      border-color: $deep-blue;
+    }
+    &::placeholder {
+      color: $pastel-gray-blue;
+    }
   }
 
   .form-group textarea {
@@ -37,20 +62,23 @@
     resize: vertical;
   }
 
-  .form-group button {
-    width: 100%;
+  .form-group-button button {
+    width: 50%;
+    translate: 50% 0;
     padding: 10px;
     background-color: $cyan-blue;
     color: $primary-white;
     border: none;
     border-radius: 4px;
     font-size: 16px;
-    transition: background-color 0.1s ease;
+    box-shadow: -3px 5px 5px -4px $primary-gray;
+    transition: background-color 0.1s ease, box-shadow 0.1s ease;
   }
 
-  .form-group button:hover {
+  .form-group-button button:hover {
     cursor: pointer;
     background-color: $bright-blue;
+    box-shadow: -3px 5px 3px -5px $primary-gray;
   }
 
   .payment-method {
@@ -68,5 +96,21 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (width < 768px) {
+  .invoice-form {
+    width: 100%;
+    margin-top: 0;
+    .block {
+      flex-direction: column;
+    }
+    .top-info {
+      width: 100%;
+    }
+    .bottom-info {
+      width: 100%;
+    }
   }
 }
